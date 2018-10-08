@@ -5,12 +5,12 @@ var express = require('express'),
 
     var app = express();
     app.set('view engine', 'ejs');
-    app.use(express.static('public'));
+    //app.use(express.static('public'));
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     var port = 3000;
     app.get('/', function (req, res) {
-      res.render('index');
+      res.render('emaill');							//app.use('/',express.static(__dirname + '/views'));
     });
     app.post('/send-email', function (req, res) {
       let transporter = nodeMailer.createTransport({
